@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from skimage import io, img_as_float, img_as_uint
+from skimage import io, img_as_float, img_as_ubyte
 import matplotlib.pyplot as plt
 
 '''
@@ -50,17 +50,17 @@ def generate_virtual_HE(nucleus_path, eosin_path, output_path, display=False):
     # Stack RGB channels
     rgb_image = np.stack((R, G, B), axis=-1)
 
-    # Convert to uint16
-    rgb_image_uint16 = img_as_uint(np.clip(rgb_image, 0, 1))
+    # Convert to uint8
+    rgb_image_uint8 = img_as_ubyte(np.clip(rgb_image, 0, 1))
 
     # Save the output
-    io.imsave(output_path, rgb_image_uint16)
+    io.imsave(output_path, rgb_image_uint8)
 
     # Optionally display the image
     if display:
-        plt.imshow(rgb_image_uint16)
+        plt.imshow(rgb_image_uint8)
         plt.axis('off')
-        plt.title("Virtual H&E RGB Image (uint16)")
+        plt.title("Virtual H&E RGB Image (uint8)")
         plt.show()
 
 if __name__ == "__main__":
