@@ -10,7 +10,9 @@ Giacomelli MG, Husvogt L, Vardeh H,  Faulkner-Jones BE, Hornegger J, Connolly JL
 
 ###### Description:
 
-This tool is intended to be called from the command line and take a image of nuclei (vHematoxylin) and a background image (vEosin) like autofluorescence or a fluorescent counterstain like eosin. The output in a 8bit RGB image saved to disk. 
+This tool is intended to be called from the command line and take a greyscale image of nuclei (vHematoxylin) and a greyscale background image (vEosin) like autofluorescence or a fluorescent counterstain like eosin. The output in a 8bit RGB image saved to disk. 
+
+A rust implementation with precompiled binaries can be found [here](https://github.com/CBI-PITT/virtualhe_rust). The rust implementation is in general much faster and easier to use, but it is less flexible.
 
 #### Installing:
 
